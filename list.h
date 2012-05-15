@@ -9,13 +9,15 @@ class dl_list {
     prev = next = this;
     this.data = data;
   }
-  add(dl_list<T> *elem) {
+
+  insert(dl_list<T> *elem) {
     elem->prev = prev;
     elem->next = this;
     prev->next = elem;
     prev = elem;
   }
-  remove(dl_list<T> *elem) {
+
+  erase(dl_list<T> *elem) {
     prev = elem->prev;
     elem->prev->next = this;
   }
