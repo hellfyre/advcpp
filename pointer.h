@@ -19,6 +19,7 @@ public:
 	}
         pointer& operator=( const pointer& other) { 
 		(*_refC)++;
+    _ptr = other._ptr;
 		cat(other);
 		return *this;
 	}
