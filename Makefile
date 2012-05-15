@@ -1,2 +1,2 @@
 all:
-	g++ bsp.cpp -o bsp
+	g++ bsp.cpp -o bsp -g
