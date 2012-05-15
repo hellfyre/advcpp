@@ -13,11 +13,13 @@ public:
 	void init() {(*_refC)++;}
 	pointer( const pointer & other ) {
 		init();
-		insert();
-		copy( other );
+		cat();
+//		insert();
+//		copy( other );
 	}
-        pointer& operator=( const pointer&) { 
+        pointer& operator=( const pointer& other) { 
 		(*_refC)++;
+		cat(other);
 		return *this;
 	}
 

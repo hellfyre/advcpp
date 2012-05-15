@@ -1,6 +1,6 @@
 class PtrList {
   public:
-  PtrList *prev, *next;
+  mutable const PtrList *prev, *next;
 
   PtrList() {
     prev = next = this;
@@ -17,5 +17,12 @@ class PtrList {
   void erase() {
     this->next->prev = this->prev;
     this->prev->next = this->next;
+  }
+
+  void cat(const PtrList & elem) {
+    elem.next->prev = this;
+    elem.next = this;
+    this->prev->next = &elem;
+    this->prev =       &elem;
   }
 };
