@@ -7,18 +7,23 @@ class dl_list {
 
   dl_list(T *data) {
     prev = next = this;
-    this.data = data;
+    this->data = data;
   }
 
-  insert(dl_list<T> *elem) {
-    elem->prev = prev;
-    elem->next = this;
-    prev->next = elem;
-    prev = elem;
+  ~dl_list() {
+    delete(data);
   }
 
-  erase(dl_list<T> *elem) {
-    prev = elem->prev;
-    elem->prev->next = this;
+  insert(T *data) {
+    dl_list elem = dl_list(data);
+    elem.prev = prev;
+    elem.next = this;
+    prev->next = &elem;
+    prev = &elem;
+  }
+
+  erase() {
+    this->next->prev = this->prev;
+    this->prev->next = this->next;
   }
 };
