@@ -1,13 +1,13 @@
-class dl_list {
+class PtrList {
   public:
-  dl_list *prev, next;
+  PtrList *prev, next;
 
-  dl_list() {
+  PtrList() {
     prev = next = this;
   }
 
   insert() {
-    dl_list elem = new dl_list();
+    PtrList elem = new PtrList();
     elem.prev = prev;
     elem.next = this;
     prev->next = &elem;
