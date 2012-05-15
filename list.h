@@ -1,21 +1,13 @@
-template <class T>
 class dl_list {
-  T *data;
-  
   public:
-  dl_list<T> *prev, next;
+  dl_list *prev, next;
 
-  dl_list(T *data) {
+  dl_list() {
     prev = next = this;
-    this->data = data;
   }
 
-  ~dl_list() {
-    delete(data);
-  }
-
-  insert(T *data) {
-    dl_list elem = dl_list(data);
+  insert() {
+    dl_list elem = new dl_list();
     elem.prev = prev;
     elem.next = this;
     prev->next = &elem;
