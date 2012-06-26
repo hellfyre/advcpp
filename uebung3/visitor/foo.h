@@ -16,12 +16,14 @@ class bar: public foo {
   public:
     void visit(dispatcher &V);
     std::string meth_one();
+    std::string type();
 };
 
 class baz: public foo {
   public:
     void visit(dispatcher &V);
     std::string meth_two();
+    std::string type();
 };
 
 #endif /* __FOO_H__ */

@@ -19,4 +19,10 @@ class showMe: public dispatcher {
     void dispatch(baz &ref);
 };
 
+class typePrinter: public dispatcher {
+  public:
+    void dispatch(bar &ref);
+    void dispatch(baz &ref);
+};
+
 #endif /* __DISPATCHER_H__ */

@@ -4,8 +4,16 @@
 int main() {
   bar one;
   baz two;
+  
+  foo &three = one;
 
-  showMe print;
-  one.visit(print);
-  two.visit(print);
+  showMe printDispatchInfo;
+  typePrinter printType;
+
+  one.visit(printDispatchInfo);
+  one.visit(printType);
+
+  two.visit(printDispatchInfo);
+  two.visit(printType);
+  three.visit(printType);
 }
